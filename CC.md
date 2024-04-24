@@ -178,9 +178,9 @@ Les membres du groupe sont tous développeurs et développeront leurs fonctionna
 
 Chacun devra s'assurer du respect de certains points :
 
-- **El Mehdi** : Responsable ??
-- **Robin** : Responsable ??
-- **Alexis** : Responsable ??
+- **El Mehdi** : Responsable _RGPD_
+- **Robin** : Responsable _Accessibilité + SEO_
+- **Alexis** : Responsable _Sécurité_
 
 ---
 
