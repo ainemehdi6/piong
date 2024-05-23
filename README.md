@@ -69,3 +69,54 @@ Voici les différents verbes utilisables pour les messages de commit
 - **revert** : Annuler quelque chose
 - **style** : Modifications qui ne modifient pas la signification du code (espaces blancs, formatage, points-virgules manquants, etc.)
 - **test** : Ajout de tests manquants ou correction d'existant
+
+## Utilisation de GIT
+
+### Les différentes branches
+
+La branche `main` est la branche sur laquelle le projet doit toujours être fonctionnel.
+
+La branche `develop` est la branche de développement sur laquelle nous vérifions que tout fonctionne bien avant de merge vers `main`. Ce doit être la seule branche à envoyer de nouvelles modifications sur `main`.
+
+Les branches de fonctionnalités suivent le schéma suivant : `ft/<feature>`.
+
+Les branches personnelles sont tirées d'une fonctionnalité et propres à un développeur. Elles suivent le schéma suivant : `ft/<feature>/<user>`. Elles permettent de faire des tests sur une fonctionnalité spécifique sans en impacter le développement.
+
+```mermaid
+---
+title: Exemple d'utilisation
+---
+gitGraph TB:
+    commit
+    branch develop
+    commit
+    branch ft/change-route
+    branch ft/add-btn
+    checkout develop
+    checkout ft/add-btn
+    commit
+    commit
+    branch ft/add-btn/alice
+    checkout develop
+    checkout ft/change-route
+    commit
+    commit
+    checkout ft/add-btn/alice
+    commit
+    checkout ft/add-btn
+    checkout develop
+    merge ft/change-route
+    checkout main
+    merge develop
+    checkout ft/add-btn
+    merge ft/add-btn/alice
+    checkout develop
+    merge ft/add-btn
+    commit
+    checkout main
+    merge develop
+    checkout develop
+    branch ft/rm-btn
+    commit
+    commit
+```
