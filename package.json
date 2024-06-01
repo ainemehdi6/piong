@@ -19,6 +19,9 @@
     "prepare": "husky install",
     "commitlint": "commitlint --edit",
     "format": "prettier --check **/*.{ts,tsx}",
-    "format:fix": "prettier --write **/*.{ts,tsx}"
+    "format:fix": "prettier --write **/*.{ts,tsx}",
+    "build": "pnpm --recursive run build",
+    "start": "pnpm --recursive run start",
+    "dev": "pnpm --recursive run dev"
   }
 }
