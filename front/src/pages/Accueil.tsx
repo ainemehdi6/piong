@@ -1,7 +1,12 @@
+import Menu from "../composents/Menu";
+
 function Accueil() {
   return (
     <>
-      <h1 className="text-3xl">Accueil</h1>
+      <div className="w-full">
+        <Menu />
+        <h1 className="text-3xl">Accueil</h1>
+      </div>
     </>
   );
 }
