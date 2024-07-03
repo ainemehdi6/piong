@@ -5,6 +5,7 @@ import Evenements from "./pages/Evenements";
 import Contact from "./pages/Contact";
 import PublicLayout from "./layouts/PublicLayout";
 import MyPaths from "./MyPaths";
+import Login from "./pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +37,14 @@ const router = createBrowserRouter([
     element: (
       <PublicLayout>
         <Contact />
+      </PublicLayout>
+    ),
+  },
+  {
+    path: MyPaths.LOGIN,
+    element: (
+      <PublicLayout>
+        <Login />
       </PublicLayout>
     ),
   },
