@@ -3,14 +3,42 @@ import Accueil from "./pages/Accueil";
 import Actualites from "./pages/Actualites";
 import Evenements from "./pages/Evenements";
 import Contact from "./pages/Contact";
-import Login from "./pages/login";
+import PublicLayout from "./layouts/PublicLayout";
+import MyPaths from "./MyPaths";
 
 const router = createBrowserRouter([
-  { path: "/", element: <Accueil /> },
-  { path: "/actus", element: <Actualites /> },
-  { path: "/evenements", element: <Evenements /> },
-  { path: "/contact", element: <Contact /> },
-  { path: "/login", element: <Login /> },
+  {
+    path: MyPaths.ACCUEIL,
+    element: (
+      <PublicLayout>
+        <Accueil />
+      </PublicLayout>
+    ),
+  },
+  {
+    path: MyPaths.ACTUS,
+    element: (
+      <PublicLayout>
+        <Actualites />
+      </PublicLayout>
+    ),
+  },
+  {
+    path: MyPaths.EVENEMENTS,
+    element: (
+      <PublicLayout>
+        <Evenements />
+      </PublicLayout>
+    ),
+  },
+  {
+    path: MyPaths.CONTACT,
+    element: (
+      <PublicLayout>
+        <Contact />
+      </PublicLayout>
+    ),
+  },
 ]);
 
 function MyRouter() {
