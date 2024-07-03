@@ -4,11 +4,11 @@ import Actualites from "./pages/Actualites";
 import Evenements from "./pages/Evenements";
 import Contact from "./pages/Contact";
 import PublicLayout from "./layouts/PublicLayout";
-import MyRoutes from "./MyRoutes";
+import MyPaths from "./MyPaths";
 
 const router = createBrowserRouter([
   {
-    path: MyRoutes.ACCUEIL,
+    path: MyPaths.ACCUEIL,
     element: (
       <PublicLayout>
         <Accueil />
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: MyRoutes.ACTUS,
+    path: MyPaths.ACTUS,
     element: (
       <PublicLayout>
         <Actualites />
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: MyRoutes.EVENEMENTS,
+    path: MyPaths.EVENEMENTS,
     element: (
       <PublicLayout>
         <Evenements />
@@ -32,7 +32,7 @@ const router = createBrowserRouter([
     ),
   },
   {
-    path: MyRoutes.CONTACT,
+    path: MyPaths.CONTACT,
     element: (
       <PublicLayout>
         <Contact />
