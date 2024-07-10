@@ -3,9 +3,9 @@ import { createArticle, updateArticle, deleteArticle, getAllArticles } from "../
 import authMiddleware from "../middleware/auth.middleware";
 
 const router = Router();
-router.get("/", getAllArticles);
-router.post("/", createArticle);
-router.put("/:id", updateArticle);
-router.delete("/:id", deleteArticle);
+router.get("", getAllArticles);
+router.post("", authMiddleware, createArticle);
+router.put("/:id", authMiddleware, updateArticle);
+router.delete("/:id", authMiddleware, deleteArticle);
 
 export default router;
