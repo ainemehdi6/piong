@@ -8,6 +8,7 @@ import MyPaths from "./MyPaths";
 import Login from "./pages/Login";
 import Meeting from "./pages/Meeting";
 import Tournament from "./pages/Tournament";
+import Article from "./pages/Article";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +64,14 @@ const router = createBrowserRouter([
     element: (
       <PublicLayout>
         <Tournament />
+      </PublicLayout>
+    ),
+  },
+  {
+    path: MyPaths.ARTICLE,
+    element: (
+      <PublicLayout>
+        <Article />
       </PublicLayout>
     ),
   },
