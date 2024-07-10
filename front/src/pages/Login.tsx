@@ -20,10 +20,8 @@ function Login() {
       console.log("Login successful:", response.data);
       localStorage.setItem("token", response.data.token);
       navigate("/");
-      // Optionally, you can redirect or perform other actions upon successful login
     } catch (error) {
       console.error("Error logging in:", error);
-      // Handle error scenarios (e.g., display an error message to the user)
     }
   };
 
