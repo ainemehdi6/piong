@@ -4,6 +4,7 @@ import Tournament from "../composents/Tournament";
 import Meeting from "../composents/Meeting";
 
 function Accueil() {
+  console.log(localStorage.getItem("token"));
   return (
     <>
       <div className="w-full h-[100vh]">

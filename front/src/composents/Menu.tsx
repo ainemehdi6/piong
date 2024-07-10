@@ -1,6 +1,13 @@
 import LogoPiong from "../assets/img/Logo-PIONG-1.png";
 
 function Menu() {
+  const isLoggedIn = !!localStorage.getItem("token");
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  };
+
   return (
     <>
       <div className="w-full h-20 bg-dark-gray flex flex-row">
@@ -8,8 +15,7 @@ function Menu() {
           <a href="./ ">
             <img src={LogoPiong} alt="Logo Piong" className="h-10 w-32" />
           </a>
-
-          <span className="text-orange text-xs ">LE TENNIS DE TABLE POUR TOUS</span>
+          <span className="text-orange text-xs">LE TENNIS DE TABLE POUR TOUS</span>
         </div>
         <div className="w-3/12 py-2"></div>
         <div className="w-6/12 py-2 flex flex-row items-center space-x-10">
@@ -25,12 +31,23 @@ function Menu() {
           <a href="./contact" className="text-light-gray mx-2 hover:text-orange">
             Contact
           </a>
-          <a
-            href="./login"
-            className="text-dark-gray mx-2 bg-orange rounded-2xl px-4 py-1 font-semibold hover:bg-orange-light"
-          >
-            Connexion
-          </a>
+          {isLoggedIn ? (
+            <>
+              <button
+                onClick={handleLogout}
+                className="text-dark-gray mx-2 bg-orange rounded-2xl px-4 py-1 font-semibold hover:bg-orange-light"
+              >
+                Déconnexion
+              </button>
+            </>
+          ) : (
+            <a
+              href="./login"
+              className="text-dark-gray mx-2 bg-orange rounded-2xl px-4 py-1 font-semibold hover:bg-orange-light"
+            >
+              Connexion
+            </a>
+          )}
         </div>
       </div>
     </>
