@@ -2,10 +2,10 @@ import { Request, Response } from "express";
 import Event, { IEvent } from "../models/event.model";
 
 export const createEvent = async (req: Request, res: Response) => {
-  const { title, flyer, type, content } = req.body;
+  const { title, flyer, type, content, eventStartDate, eventEndDate } = req.body;
 
   try {
-    const newEvent: IEvent = new Event({ title, flyer, type, content });
+    const newEvent: IEvent = new Event({ title, flyer, type, content, eventStartDate, eventEndDate });
     await newEvent.save();
     res.status(201).json(newEvent);
   } catch (error) {
@@ -16,6 +16,16 @@ export const createEvent = async (req: Request, res: Response) => {
 export const getEvents = async (_req: Request, res: Response) => {
   try {
     const events: IEvent[] = await Event.find();
+    res.status(200).json(events);
+  } catch (error) {
+    res.status(500).json({ message: "Error fetching events", error });
+  }
+};
+
+export const getUpcomingEvents = async (_req: Request, res: Response) => {
+  try {
+    const currentDate = new Date();
+    const events: IEvent[] = await Event.find({ eventStartDate: { $gte: currentDate } });
     res.status(200).json(events);
   } catch (error) {
     res.status(500).json({ message: "Error fetching events", error });
