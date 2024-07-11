@@ -1,6 +1,6 @@
 import { Article as ArticleType } from "../../utils/types";
 
-type ArticleProps = Pick<ArticleType, "title" | "createdAt" | "image">;
+type ArticleProps = Pick<ArticleType, "_id" | "title" | "createdAt" | "image">;
 
 function Article({ title, createdAt, image }: ArticleProps) {
   const formattedDate = new Date(createdAt).toLocaleDateString();

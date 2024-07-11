@@ -5,7 +5,7 @@ enum MyPaths {
   CONTACT = "/contact",
   LOGIN = "/login",
   MEETING = "/rassemblements",
-  TOURNAMENT = "/tournois",
+  TOURNAMENT = "/tournois/:id",
   ARTICLE = "/article",
 }
 

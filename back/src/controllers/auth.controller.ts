@@ -45,13 +45,13 @@ export const login = async (req: Request, res: Response) => {
 
     const payload = {
       user: {
-        id: user.id,
+        email: user.email,
       },
     };
 
     jwt.sign(payload, process.env.JWT_SECRET!, { expiresIn: process.env.JWT_TIME_EXPIRE! }, (err, token) => {
       if (err) throw err;
-      res.json({ token });
+      res.json({ token, role: user.role });
     });
   } catch (error) {
     res.status(500).send("Server error");
