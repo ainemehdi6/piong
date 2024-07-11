@@ -12,6 +12,13 @@ function Navbar() {
 
   const toggleMenu = () => setMenuOpened((previous) => !previous);
 
+  const isLoggedIn = !!localStorage.getItem("token");
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    window.location.reload();
+  };
+
   return (
     <header>
       <nav className="bg-white border-gray-200 px-4 lg:px-6 py-2.5">
@@ -39,6 +46,23 @@ function Navbar() {
               <li>
                 <NavItem href={MyPaths.CONTACT}>Contact</NavItem>
               </li>
+              {isLoggedIn ? (
+                <>
+                  <a
+                    onClick={handleLogout}
+                    className="text-dark-gray mx-2 bg-orange rounded-2xl px-4 py-1 font-semibold hover:bg-orange-light"
+                  >
+                    Déconnexion
+                  </a>
+                </>
+              ) : (
+                <Link
+                  to="./login"
+                  className="text-dark-gray mx-2 bg-orange rounded-2xl px-4 py-1 font-semibold hover:bg-orange-light"
+                >
+                  Connexion
+                </Link>
+              )}
             </ul>
           </div>
         </div>
