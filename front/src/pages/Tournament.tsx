@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faMapPin, faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router-dom";
 import { Event as EventType } from "../utils/types";
+import Comment from "../components/Comment/Comment";
+import CommentForm from "../components/Comment/CommentForm";
 
 function Tournament() {
   const { id } = useParams<{ id: string }>();
@@ -50,6 +52,18 @@ function Tournament() {
             <span>-</span>
             <p className="text-md pl-4">{tournament.content}</p>
           </div>
+        </div>
+        <div className="px-64 pt-12 pb-4 bg-gray-200">
+          <CommentForm />
+        </div>
+        <div className="px-64 py-4 bg-gray-200 bg">
+          <h2 className="w-full border-b border-gray-200 p-4 bg-dark-gray text-white rounded-lg font-medium">
+            Commentaires
+          </h2>
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
         </div>
       </div>
     </>

@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar, faMapPin, faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import placeHolder from "../assets/img/placeHolder.png";
-
+import Comment from "../components/Comment/Comment";
+import CommentForm from "../components/Comment/CommentForm";
 function Meeting() {
   return (
     <>
@@ -49,6 +50,18 @@ function Meeting() {
               dolore magna aliqua.
             </p>
           </div>
+        </div>
+        <div className="px-64 pt-12 pb-4 bg-gray-200">
+          <CommentForm />
+        </div>
+        <div className="px-64 py-4 bg-gray-200 bg">
+          <h2 className="w-full border-b border-gray-200 p-4 bg-dark-gray text-white rounded-lg font-medium">
+            Commentaires
+          </h2>
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
         </div>
       </div>
     </>
