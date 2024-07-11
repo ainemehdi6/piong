@@ -4,20 +4,17 @@ import NavItem from "./NavItem";
 import { useState } from "react";
 import logoPiongLight from "../../assets/images/logo-piong/logo-piong-light.svg";
 import ToggleButton from "./ToggleButton";
+import Dropdow from "./DropDown";
 
-function Navbar() {
+function NavbarAdmin() {
   const [menuOpened, setMenuOpened] = useState(false);
+  const [dropDownOpened, setDropDownOpened] = useState(false);
 
   const menuId = "mobile-menu";
+  const dropDownId = "dropDownId";
 
   const toggleMenu = () => setMenuOpened((previous) => !previous);
-
-  const isLoggedIn = !!localStorage.getItem("token");
-
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    window.location.reload();
-  };
+  const toggleDropDown = () => setDropDownOpened((previous) => !previous);
 
   return (
     <header>
@@ -46,23 +43,23 @@ function Navbar() {
               <li>
                 <NavItem href={MyPaths.CONTACT}>Contact</NavItem>
               </li>
-              {isLoggedIn ? (
-                <>
-                  <a
-                    onClick={handleLogout}
-                    className="text-dark-gray mx-2 bg-orange rounded-2xl px-4 py-1 font-semibold hover:bg-orange-light"
-                  >
-                    Déconnexion
-                  </a>
-                </>
-              ) : (
-                <Link
-                  to="./login"
-                  className="text-dark-gray mx-2 bg-orange rounded-2xl px-4 py-1 font-semibold hover:bg-orange-light"
-                >
-                  Connexion
-                </Link>
-              )}
+              <div className="flex flex-col">
+                <Dropdow dropDownOpened={dropDownOpened} toggleDropDown={toggleDropDown} dropDownId={dropDownId} />
+
+                <div id="dropDownId" className={`${dropDownOpened || "hidden"} bg-white shadow w-44 absolute mt-8`}>
+                  <ul>
+                    <li>
+                      <NavItem href={MyPaths.ADMIN_USER}>Admin user</NavItem>
+                    </li>
+                    <li>
+                      <NavItem href={MyPaths.ADMIN_ARTICLE}> Admin Article</NavItem>
+                    </li>
+                    <li>
+                      <NavItem href={MyPaths.ADMIN_EVENT}> Admin event</NavItem>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </ul>
           </div>
         </div>
@@ -71,4 +68,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default NavbarAdmin;

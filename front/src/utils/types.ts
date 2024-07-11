@@ -1,5 +1,5 @@
 export interface Article {
-  id: string;
+  _id: string;
   title: string;
   description: string;
   image: string;
@@ -7,7 +7,7 @@ export interface Article {
 }
 
 export interface Event {
-  id: string;
+  _id: string;
   title: string;
   flyer: string;
   type: string;

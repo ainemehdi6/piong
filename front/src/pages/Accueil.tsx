@@ -36,7 +36,7 @@ function Accueil() {
         <div className="flex h-[89vh] flex-col">
           <div className="flex flex-row justify-between w-full px-8">
             {articles.map((article) => (
-              <Article key={article.id} title={article.title} createdAt={article.createdAt} image={article.image} />
+              <Article _id={article._id} title={article.title} createdAt={article.createdAt} image={article.image} />
             ))}
           </div>
           <div className="flex flex-row px-12 h-full">
@@ -44,7 +44,7 @@ function Accueil() {
               <H2>Tournament</H2>
               {tournaments.map((tournament) => (
                 <Tournament
-                  key={tournament.id}
+                  _id={tournament._id}
                   title={tournament.title}
                   eventStartDate={tournament.eventStartDate}
                   flyer={tournament.flyer}
@@ -53,7 +53,7 @@ function Accueil() {
               <H2>Meeting</H2>
               {meetings.map((meeting) => (
                 <Meeting
-                  key={meeting.id}
+                  _id={meeting._id}
                   title={meeting.title}
                   eventStartDate={meeting.eventStartDate}
                   flyer={meeting.flyer}

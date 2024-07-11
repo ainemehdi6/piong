@@ -1,24 +1,37 @@
 import { useState } from "react";
-import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
+import Alert from "../layouts/Alert";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
+  const [alert, setAlert] = useState(null);
   const navigate = useNavigate();
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/login", {
-        email: email,
-        password: password,
+      const response = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+        }),
       });
-      console.log("Login successful:", response.data);
-      localStorage.setItem("token", response.data.token);
+
+      const data = await response.json();
+      if (response.status != 200) {
+        setAlert(data.msg);
+        return;
+      }
+
+      localStorage.setItem("token", data.token);
       navigate("/");
     } catch (error) {
       console.error("Error logging in:", error);
@@ -27,22 +40,33 @@ function Login() {
 
   const handleRegister = async () => {
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/register", {
-        email: email,
-        password: password,
-        name: name,
-        phone: phone,
+      const response = await fetch("http://localhost:5000/api/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          email: email,
+          password: password,
+          name: name,
+          phone: phone,
+        }),
       });
-      console.log("Registration successful:", response.data);
-      // Optionally, you can handle success scenarios like displaying a success message
+
+      const data = await response.json();
+      setAlert(data.msg);
     } catch (error) {
       console.error("Error registering:", error);
-      // Handle error scenarios (e.g., display an error message to the user)
     }
+  };
+
+  const handleCloseAlert = () => {
+    setAlert(null);
   };
 
   return (
     <>
+      {alert && <Alert message={alert} onClose={handleCloseAlert} />}
       <div className="h-screen w-[100vw] flex flex-column justify-center items-center">
         <div className="flex flex-row ">
           {/* Left side content */}

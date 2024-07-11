@@ -27,7 +27,7 @@ function Evenements() {
             <div className="w-full h-5 border-t border-orange"></div>
             {tournaments.map((tournament) => (
               <Tournament
-                key={tournament.id}
+                _id={tournament._id}
                 title={tournament.title}
                 eventStartDate={tournament.eventStartDate}
                 flyer={tournament.flyer}
@@ -42,7 +42,7 @@ function Evenements() {
             <div className="w-full h-5 border-t border-orange"></div>
             {meetings.map((meeting) => (
               <Meeting
-                key={meeting.id}
+                _id={meeting._id}
                 title={meeting.title}
                 eventStartDate={meeting.eventStartDate}
                 flyer={meeting.flyer}
