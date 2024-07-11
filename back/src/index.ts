@@ -4,6 +4,7 @@ import connectDB from "./config/db";
 import authRoutes from "./routes/auth.routes";
 import articlesRoutes from "./routes/article.routes";
 import eventsRoutes from "./routes/event.routes";
+import userRoutes from "./routes/user.routes";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -24,6 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use("/api/auth", authRoutes);
 app.use("/api/articles", articlesRoutes);
 app.use("/api/events", eventsRoutes);
+app.use("/api/users", userRoutes);
 
 const PORT = process.env.PORT || 5000;
 

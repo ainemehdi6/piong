@@ -1,6 +1,17 @@
-import UserTabRow from "./UsertabRow"; // Importez le composant enfant
+import { useEffect, useState } from "react";
+import UserTabRow from "./UsertabRow";
+import { User as UsersType } from "../../utils/types";
 
 const UserTab = () => {
+  const [users, setUsers] = useState<UsersType[]>([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/users")
+      .then((response) => response.json())
+      .then((data) => setUsers(data))
+      .catch((error) => console.error("Error fetching users:", error));
+  }, []);
+
   return (
     <div className="relative overflow-x-auto shadow-md rounded-md">
       <table className="w-full text-sm text-left text-dark-gray ">
@@ -24,13 +35,9 @@ const UserTab = () => {
           </tr>
         </thead>
         <tbody className="rounded-b-md text-xs">
-          <UserTabRow />
-          <UserTabRow />
-          <UserTabRow />
-          <UserTabRow />
-          <UserTabRow />
-          <UserTabRow />
-          <UserTabRow />
+          {users.map((user) => (
+            <UserTabRow _id={user._id} name={user.name} role={user.role} email={user.email} phone={user.phone} />
+          ))}
         </tbody>
       </table>
     </div>

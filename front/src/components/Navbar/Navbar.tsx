@@ -57,7 +57,7 @@ function Navbar() {
                 </>
               ) : (
                 <Link
-                  to="./login"
+                  to="/login"
                   className="text-dark-gray mx-2 bg-orange rounded-2xl px-4 py-1 font-semibold hover:bg-orange-light"
                 >
                   Connexion

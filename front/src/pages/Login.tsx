@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import Alert from "../layouts/Alert";
+import MyPaths from "../MyPaths";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -30,9 +31,9 @@ function Login() {
         setAlert(data.msg);
         return;
       }
-
       localStorage.setItem("token", data.token);
-      navigate("/");
+      localStorage.setItem("role", data.role);
+      data.role === "ADMIN" ? navigate(MyPaths.ADMIN_EVENT) : navigate(MyPaths.ACCUEIL);
     } catch (error) {
       console.error("Error logging in:", error);
     }
