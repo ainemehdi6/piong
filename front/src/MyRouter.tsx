@@ -4,12 +4,15 @@ import Actualites from "./pages/Actualites";
 import Evenements from "./pages/Evenements";
 import Contact from "./pages/Contact";
 import PublicLayout from "./layouts/PublicLayout";
+import AdminLayout from "./layouts/AdminLayout";
 import MyPaths from "./MyPaths";
 import Login from "./pages/Login";
 import Meeting from "./pages/Meeting";
 import Tournament from "./pages/Tournament";
 import Article from "./pages/Article";
-
+import AdminUser from "./pages/AdminUser";
+import AdminEvent from "./pages/AdminEvent";
+import AdminArticle from "./pages/AdminArticle";
 const router = createBrowserRouter([
   {
     path: MyPaths.ACCUEIL,
@@ -73,6 +76,30 @@ const router = createBrowserRouter([
       <PublicLayout>
         <Article />
       </PublicLayout>
+    ),
+  },
+  {
+    path: MyPaths.ADMIN_USER,
+    element: (
+      <AdminLayout>
+        <AdminUser />
+      </AdminLayout>
+    ),
+  },
+  {
+    path: MyPaths.ADMIN_EVENT,
+    element: (
+      <AdminLayout>
+        <AdminEvent />
+      </AdminLayout>
+    ),
+  },
+  {
+    path: MyPaths.ADMIN_ARTICLE,
+    element: (
+      <AdminLayout>
+        <AdminArticle />
+      </AdminLayout>
     ),
   },
 ]);

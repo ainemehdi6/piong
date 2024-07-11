@@ -18,7 +18,7 @@ function ToggleButton({ menuOpened, toggleMenu, menuId }: ToggleButtonProps) {
       onClick={toggleMenu}
     >
       <span className="sr-only">{menuOpened ? "Fermer le menu" : "Ouvrir le menu"}</span>
-      <FontAwesomeIcon icon={menuOpened ? faXmark : faBars} className="size-6" />
+      <FontAwesomeIcon icon={menuOpened ? faBars : faXmark} className="size-6" />
     </button>
   );
 }

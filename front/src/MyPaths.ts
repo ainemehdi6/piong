@@ -7,6 +7,9 @@ enum MyPaths {
   MEETING = "/rassemblements",
   TOURNAMENT = "/tournois/:id",
   ARTICLE = "/article",
+  ADMIN_USER = "/adminUser",
+  ADMIN_EVENT = "/adminEvent",
+  ADMIN_ARTICLE = "/adminArticle",
 }
 
 export default MyPaths;
