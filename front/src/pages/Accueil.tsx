@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Article from "../components/Accueil/Article";
 import Tournament from "../components/Accueil/Tournament";
 import Meeting from "../components/Accueil/Meeting";
