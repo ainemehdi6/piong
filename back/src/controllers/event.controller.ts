@@ -32,6 +32,42 @@ export const getUpcomingEvents = async (_req: Request, res: Response) => {
   }
 };
 
+export const getUpcomingTournament = async (_req: Request, res: Response) => {
+  try {
+    const tournament = await Event.find({ type: "competition" }).sort({ eventStartDate: 1 }).limit(1);
+    res.status(200).json(tournament);
+  } catch (error) {
+    res.status(500).json({ message: "Erreur lors de la récupération des tournois", error });
+  }
+};
+
+export const getUpcomingMeeting = async (_req: Request, res: Response) => {
+  try {
+    const meeting = await Event.find({ type: "rassemblement" }).sort({ eventStartDate: 1 }).limit(1);
+    res.status(200).json(meeting);
+  } catch (error) {
+    res.status(500).json({ message: "Erreur lors de la récupération des tournois", error });
+  }
+};
+
+export const getTournaments = async (req: Request, res: Response) => {
+  try {
+    const tournaments = await Event.find({ type: "competition" }).sort({ eventStartDate: 1 });
+    res.status(200).json(tournaments);
+  } catch (error) {
+    res.status(500).json({ message: "Erreur lors de la récupération des tournois", error });
+  }
+};
+
+export const getMeetings = async (req: Request, res: Response) => {
+  try {
+    const meetings = await Event.find({ type: "rassemblement" }).sort({ eventStartDate: 1 });
+    res.status(200).json(meetings);
+  } catch (error) {
+    res.status(500).json({ message: "Erreur lors de la récupération des rassemblements", error });
+  }
+};
+
 export const getEventById = async (req: Request, res: Response) => {
   try {
     const event: IEvent | null = await Event.findById(req.params.id);

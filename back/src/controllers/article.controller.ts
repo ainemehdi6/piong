@@ -23,6 +23,17 @@ export const getAllArticles = async (req: Request, res: Response) => {
   }
 };
 
+export const getLastFourArticles = async (req: Request, res: Response) => {
+  try {
+    const articles = await Article.find().sort({ createdAt: -1 }).limit(4).exec();
+
+    res.status(200).json(articles);
+  } catch (error) {
+    console.error("Error getting last four articles:", error);
+    res.status(500).send("Error getting last four articles");
+  }
+};
+
 export const updateArticle = async (req: Request, res: Response) => {
   try {
     const { title, description, image } = req.body;
