@@ -6,6 +6,7 @@ import imgAccueil from "../assets/img/accueil-img.png";
 import logoPiong from "../assets/images/logo-piong/logo-piong-light.svg";
 import { Article as ArticleType } from "../utils/types";
 import { Event as EventType } from "../utils/types";
+import H2 from "../components/Headings/H2";
 
 function Accueil() {
   const [articles, setArticles] = useState<ArticleType[]>([]);
@@ -40,7 +41,7 @@ function Accueil() {
           </div>
           <div className="flex flex-row px-12 h-full">
             <div className="h-full w-2/12 flex flex-col justify-between">
-              <h1>Tournament</h1>
+              <H2>Tournament</H2>
               {tournaments.map((tournament) => (
                 <Tournament
                   key={tournament.id}
@@ -49,7 +50,7 @@ function Accueil() {
                   flyer={tournament.flyer}
                 />
               ))}
-              <h1>Meeting</h1>
+              <H2>Meeting</H2>
               {meetings.map((meeting) => (
                 <Meeting
                   key={meeting.id}

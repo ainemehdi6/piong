@@ -1,11 +1,12 @@
 import image from "../assets/img/contact-image.svg";
+import H2 from "../components/Headings/H2";
 
 function Contact() {
   return (
     <>
       <div className="mx-36 my-16 h-[100-vh] flex flex-row shadow-md">
         <div className="h-full w-6/12 py-8 px-12 bg-xlight-gray">
-          <h2 className="text-xl w-full text-center pb-4">Un Message à nous faire parvenir ?</h2>
+          <H2 className="text-center">Un Message à nous faire parvenir ?</H2>
           <label className="block mt-2 text-sm font-medium text-dark-gray"> Nom</label>
           <div className="relative">
             <div className="absolute inset-y-0 start-0 flex items-center ps-3.5 pointer-events-none ">
