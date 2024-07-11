@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Tournament from "../components/Accueil/Tournament";
 import Meeting from "../components/Accueil/Meeting";
 import { Event as EventType } from "../utils/types";
+import H2 from "../components/Headings/H2";
 function Evenements() {
   const [tournaments, setTournaments] = useState<EventType[]>([]);
   const [meetings, setMeetings] = useState<EventType[]>([]);
@@ -22,7 +23,7 @@ function Evenements() {
     <>
       <div className="h-[92vh] w-auto flex flex-row">
         <div className="w-6/12 m-8">
-          <h1 className="text-4xl w-full text-center p-4">TOURNOIS</h1>
+          <H2 className="text-center">TOURNOIS</H2>
           <div className="h-auto w-full flex flex-row flex-wrap justify-around space-y-8">
             <div className="w-full h-5 border-t border-orange"></div>
             {tournaments.map((tournament) => (
@@ -37,7 +38,7 @@ function Evenements() {
         </div>
 
         <div className="w-6/12 m-8">
-          <h1 className="text-4xl w-full text-center p-4">ÉVÉNEMENTS</h1>
+          <H2 className="text-center">ÉVÉNEMENTS</H2>
           <div className="h-auto w-full flex flex-row flex-wrap justify-around space-y-8">
             <div className="w-full h-5 border-t border-orange"></div>
             {meetings.map((meeting) => (
