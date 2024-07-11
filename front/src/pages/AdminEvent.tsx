@@ -1,7 +1,17 @@
+import AdminEventForm from "../components/AdminEvent/AdminEventForm";
+import EventTab from "../components/AdminEvent/EventTab";
+
 function AdminEvent() {
   return (
     <>
-      <h1>Gestion Event</h1>
+      <div className="w-full h-[80vh] flex">
+        <div className="w-1/2 p-8">
+          <AdminEventForm />
+        </div>
+        <div className="w-1/2 p-8">
+          <EventTab />
+        </div>
+      </div>
     </>
   );
 }
