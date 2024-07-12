@@ -14,8 +14,6 @@ style: |
 
 <!-- _footer: EL AINE El Mehdi - THOMAS Robin - BONAL Alexis -->
 
-# Cahier des charges
-
 ![width:500](logo-piong.svg)
 
 Tennis de table pour tous
@@ -28,9 +26,9 @@ Tennis de table pour tous
 
 Association de tennis de table ouverte à tous.
 
-Métropole lilloise  
+Métropole lilloise
 
-Organisation tournois et rassemblement conviviaux 
+Organisation tournois et rassemblement conviviaux
 
 ---
 
@@ -59,6 +57,7 @@ Chacun devra s'assurer du respect de certains points :
 Couleur Principale : **Orange** (#ff7f00)
 Couleur Secondaire : **Gris Foncé** (#202228)
 Couleur Fond : **Gris Clair** (#D9DBE0)
+
 ---
 
 ## Page - Accueil
@@ -202,4 +201,4 @@ Nous utiliserons **TypeScript** pour le projet
 | ------------------ | ------------ |
 | Node               | Vite         |
 | Express            | React        |
-| MongoDB + Mongoose | Tailwind             |
+| MongoDB + Mongoose | Tailwind     |
