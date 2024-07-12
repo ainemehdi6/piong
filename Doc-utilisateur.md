@@ -1,10 +1,26 @@
 # Documentation Utilisateur
 
-Cette documentation est faite pour les utilis
+Cette documentation est faite pour les utilisateurs du site.
 
 ## Publique
 
+### Inscription
+
+path : `/login`
+
+![inscription](user-doc/inscription.png)
+
+### Connexion
+
+path : `/login`
+
+![connexion](./user-doc/connexion.png)
+
 ### Consulter les pages du site
+
+path : `/*`
+
+![navigation](./user-doc/navigation.png)
 
 ### Articles
 
