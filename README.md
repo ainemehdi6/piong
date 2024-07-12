@@ -29,7 +29,7 @@ pnpm install
 Compilation des projets :
 
 ```sh
-pnpm --recursive run build
+pnpm build
 ```
 
 ### Start
@@ -37,7 +37,15 @@ pnpm --recursive run build
 Exécution des projets :
 
 ```sh
-pnpm --recursive run start
+pnpm start
+```
+
+### Développement
+
+Exécution des projets en mode développement, sur écoute :
+
+```sh
+pnpm dev
 ```
 
 ## Commitlint
@@ -46,7 +54,7 @@ pnpm --recursive run start
 
 Afin d'être validés, les messages de commit devront se faire au format suivant :
 
-```<type>[optional scope]: <description>```
+`<type>[optional scope]: <description>`
 
 Avec pour attributs :
 
@@ -120,3 +128,6 @@ gitGraph TB:
     commit
     commit
 ```
+TODO List :
+
+Gestion des commentaires 
