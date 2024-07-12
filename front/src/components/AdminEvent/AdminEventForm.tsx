@@ -1,7 +1,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faT, faCalendar, faMapPin } from "@fortawesome/free-solid-svg-icons";
+import MDEditor from "@uiw/react-md-editor";
+import React from "react";
 
 const AdminEventForm = () => {
+  const [value, setValue] = React.useState("**Hello world!!!**");
+
   return (
     <div className="h-full w-full p-4 rounded-xl bg-xlight-gray">
       <h1 className="text-xl w-full text-center p-2">Ajouter un évènement</h1>
@@ -40,9 +44,7 @@ const AdminEventForm = () => {
             </div>
           </div>
 
-          <div className="w-full p-2 flex felx-col">
-            <textarea className="w-full h-1/2 rounded-lg p-2"></textarea>
-          </div>
+          <MDEditor value={value} onChange={(value) => setValue(value || "")} />
 
           <div className="w-full p-2">
             <input
