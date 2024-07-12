@@ -5,7 +5,6 @@ import React from "react";
 const AdminArticleForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
-  const [image, setImage] = useState<File | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -16,8 +15,8 @@ const AdminArticleForm = () => {
       const response = await fetch("http://localhost:5000/api/articles", {
         method: "POST",
         body: JSON.stringify({
-          title: "test",
-          description: "test",
+          title: title,
+          description: description,
           image: "https://www.macapflag.com/blog/wp-content/uploads/2024/02/tennis-de-table-TITRE.jpg",
         }),
         headers: {
@@ -29,7 +28,6 @@ const AdminArticleForm = () => {
         console.log("Article ajouté avec succès");
         setTitle("");
         setDescription("");
-        setImage(null);
         window.location.reload();
       } else {
         console.error("Erreur lors de l'ajout de l'article");
