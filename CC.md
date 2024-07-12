@@ -26,9 +26,11 @@ Tennis de table pour tous
 
 ## L'association
 
-**Piong** est une association de tennis de table ouverte à tous.
+Association de tennis de table ouverte à tous.
 
-Localisée dans la métropole lilloise, elle organise différents évènements tels que des tournois ou d'autres moments de convivialité.
+Métropole lilloise  
+
+Organisation tournois et rassemblement conviviaux 
 
 ---
 
@@ -40,32 +42,45 @@ Mots clés : _piong, tennis de table, Lille, pongiste, tournois, championnat_
 
 ---
 
+## Organisation
+
+Les membres du groupe sont tous développeurs et développeront leurs fonctionnalités.
+
+Chacun devra s'assurer du respect de certains points :
+
+- **El Mehdi** : Développeur Back-End
+- **Robin** : Développeur Front-End
+- **Alexis** : Développeur Full-Stack - Responsable Infra
+
+---
+
 ## Charte graphique
 
-Couleur principale : **Orange** (#ff7f00)
-Couleur de fond : **Gris Foncé** (#202228)
-
+Couleur Principale : **Orange** (#ff7f00)
+Couleur Secondaire : **Gris Foncé** (#202228)
+Couleur Fond : **Gris Clair** (#D9DBE0)
 ---
 
 ## Page - Accueil
 
-- la prochaine **compétition**
-- les **4** derniers articles
-- le prochain **rassemblement convivial**
+- La prochaine **compétition**
+- Les **4** derniers articles
+- Le prochain **rassemblement convivial**
+- Présentatation associassion
 
 ---
 
 ## Page - Articles
 
-Au premier affichage, les dix premiers **articles**.
+- 10 Articles les plus récents
 
-Un bouton ou un scroll down permettrait de charger les articles plus anciens.
+Chargement des plus Anciens au scroll.
 
 ---
 
 ## Page - Évènements
 
-Une page regroupant les **évènements** auxquels les membres peuvent participer.
+Liste des évènements par type
 
 Deux sous pages pour regrouper :
 
@@ -76,7 +91,7 @@ Deux sous pages pour regrouper :
 
 ## Page - Contact
 
-Une page de contact très simple pour
+Page de contact pour
 **contacter l'association**
 
 ---
@@ -172,18 +187,6 @@ Panel offrant une gestion sur :
 
 ---
 
-## Organisation
-
-Les membres du groupe sont tous développeurs et développeront leurs fonctionnalités.
-
-Chacun devra s'assurer du respect de certains points :
-
-- **El Mehdi** : Responsable _RGPD_
-- **Robin** : Responsable _Accessibilité + SEO_
-- **Alexis** : Responsable _Sécurité_
-
----
-
 ## Outils
 
 - **Discord**
@@ -199,4 +202,4 @@ Nous utiliserons **TypeScript** pour le projet
 | ------------------ | ------------ |
 | Node               | Vite         |
 | Express            | React        |
-| MongoDB + Mongoose |              |
+| MongoDB + Mongoose | Tailwind             |
