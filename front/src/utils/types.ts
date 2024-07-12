@@ -16,3 +16,12 @@ export interface Event {
   eventStartDate: Date;
   eventEndDate: Date;
 }
+
+export interface User {
+  _id: string;
+  name: string;
+  phone: string;
+  email: string;
+  password: string;
+  role: string | null;
+}

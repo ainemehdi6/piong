@@ -8,6 +8,8 @@ import H4 from "../components/Headings/H4";
 import H5 from "../components/Headings/H5";
 import H6 from "../components/Headings/H6";
 import UL from "../components/Lists/UL";
+import CommentForm from "../components/Comment/CommentForm";
+import Comment from "../components/Comment/Comment";
 
 const markdown = `Le ping-pong, malgré son apparente simplicité, est un sport exigeant qui demande précision, stratégie et rapidité d'exécution. Même les joueurs expérimentés peuvent parfois tomber dans des pièges courants. 
 Voici 5 erreurs fréquemment observées et comment les corriger :
@@ -79,6 +81,19 @@ function Article() {
           >
             {markdown}
           </Markdown>
+        </div>
+
+        <div className="px-64 pt-12 pb-4 bg-gray-200">
+          <CommentForm />
+        </div>
+        <div className="px-64 py-4 bg-gray-200 bg">
+          <h2 className="w-full border-b border-gray-200 p-4 bg-dark-gray text-white rounded-lg font-medium">
+            Commentaires
+          </h2>
+          <Comment />
+          <Comment />
+          <Comment />
+          <Comment />
         </div>
       </div>
     </>

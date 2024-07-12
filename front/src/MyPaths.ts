@@ -10,6 +10,7 @@ enum MyPaths {
   ADMIN_USER = "/adminUser",
   ADMIN_EVENT = "/adminEvent",
   ADMIN_ARTICLE = "/adminArticle",
+  ACCOUNT = "/account",
 }
 
 export default MyPaths;

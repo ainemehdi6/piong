@@ -1,33 +1,22 @@
-import { useEffect, useState } from "react";
-import UserTabRow from "./UsertabRow";
-import { User as UsersType } from "../../utils/types";
+import EventTabRow from "./EventTabRow"; // Importez le composant enfant
 
-const UserTab = () => {
-  const [users, setUsers] = useState<UsersType[]>([]);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/api/users")
-      .then((response) => response.json())
-      .then((data) => setUsers(data))
-      .catch((error) => console.error("Error fetching users:", error));
-  }, []);
-
+const EventTab = () => {
   return (
     <div className="relative overflow-x-auto shadow-md rounded-md">
       <table className="w-full text-sm text-left text-dark-gray ">
         <thead className="text-xs text-dark-gray uppercase bg-xlight-gray rounded-t-md">
           <tr>
             <th scope="col" className="px-4 py-2 text-center">
-              Nom
+              Evènement
             </th>
             <th scope="col" className="px-4 py-2 text-center">
-              Mail
+              Type
             </th>
             <th scope="col" className="px-4 py-2 text-center">
-              Téléphone
+              Lieux
             </th>
             <th scope="col" className="px-4 py-2 text-center">
-              Valider
+              Date & heure
             </th>
             <th scope="col" className="px-4 py-2 text-center">
               Supprimer
@@ -35,13 +24,17 @@ const UserTab = () => {
           </tr>
         </thead>
         <tbody className="rounded-b-md text-xs">
-          {users.map((user) => (
-            <UserTabRow _id={user._id} name={user.name} role={user.role} email={user.email} phone={user.phone} />
-          ))}
+          <EventTabRow />
+          <EventTabRow />
+          <EventTabRow />
+          <EventTabRow />
+          <EventTabRow />
+          <EventTabRow />
+          <EventTabRow />
         </tbody>
       </table>
     </div>
   );
 };
 
-export default UserTab;
+export default EventTab;

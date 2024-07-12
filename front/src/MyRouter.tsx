@@ -13,6 +13,7 @@ import Article from "./pages/Article";
 import AdminUser from "./pages/AdminUser";
 import AdminEvent from "./pages/AdminEvent";
 import AdminArticle from "./pages/AdminArticle";
+import Account from "./pages/Account";
 const router = createBrowserRouter([
   {
     path: MyPaths.ACCUEIL,
@@ -99,6 +100,14 @@ const router = createBrowserRouter([
     element: (
       <AdminLayout>
         <AdminArticle />
+      </AdminLayout>
+    ),
+  },
+  {
+    path: MyPaths.ACCOUNT,
+    element: (
+      <AdminLayout>
+        <Account />
       </AdminLayout>
     ),
   },
