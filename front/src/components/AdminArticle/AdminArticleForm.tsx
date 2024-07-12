@@ -1,4 +1,9 @@
+import MDEditor from "@uiw/react-md-editor";
+import React from "react";
+
 const AdminArticleForm = () => {
+  const [value, setValue] = React.useState("**Hello world!!!**");
+
   return (
     <div className="h-full w-full py-8   px-8 rounded-xl bg-xlight-gray">
       <h1 className="text-4xl w-full text-center p-4">Ajouter un article</h1>
@@ -7,7 +12,7 @@ const AdminArticleForm = () => {
           <label className="text-lg w-full font-medium">Titre</label>
           <input className="w-3/6 rounded-lg pl-2" type="text" />
           <label className="text-lg w-full font-medium">Contenu</label>
-          <textarea className="w-3/4 h-1/2 rounded-lg"></textarea>
+          <MDEditor value={value} onChange={(value) => setValue(value || "")} />
           <label className="text-lg w-full font-medium">Image</label>
           <input
             className="block w-2/3 text-sm text-dark-gray rounded-lg cursor-pointer bg-bg-gray focus:outline-none"
