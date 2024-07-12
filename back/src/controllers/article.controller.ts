@@ -9,7 +9,7 @@ export const createArticle = async (req: Request, res: Response) => {
     res.status(201).json(savedArticle);
   } catch (error) {
     console.error("Error creating article:", error);
-    res.status(500).send("Error creating article");
+    res.status(500).json({ error });
   }
 };
 

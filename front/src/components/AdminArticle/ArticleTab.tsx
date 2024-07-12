@@ -1,6 +1,17 @@
-import ArticleTabRow from "./ArticleTabRow"; // Importez le composant enfant
+import ArticleTabRow from "./ArticleTabRow";
+import { useEffect, useState } from "react";
+import { Article as ArticleType } from "../../utils/types";
 
 const ArticleTab = () => {
+  const [articles, setArticles] = useState<ArticleType[]>([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/articles")
+      .then((response) => response.json())
+      .then((data) => setArticles(data))
+      .catch((error) => console.error("Error fetching articles:", error));
+  }, []);
+
   return (
     <div className="relative overflow-x-auto shadow-md rounded-md">
       <table className="w-full text-sm text-left text-dark-gray ">
@@ -18,13 +29,14 @@ const ArticleTab = () => {
           </tr>
         </thead>
         <tbody className="rounded-b-md text-xs">
-          <ArticleTabRow />
-          <ArticleTabRow />
-          <ArticleTabRow />
-          <ArticleTabRow />
-          <ArticleTabRow />
-          <ArticleTabRow />
-          <ArticleTabRow />
+          {articles.map((article) => (
+            <ArticleTabRow
+              _id={article._id}
+              title={article.title}
+              createdAt={article.createdAt}
+              image={article.image}
+            />
+          ))}
         </tbody>
       </table>
     </div>
