@@ -3,8 +3,7 @@ import Accueil from "./pages/Accueil";
 import Actualites from "./pages/Actualites";
 import Evenements from "./pages/Evenements";
 import Contact from "./pages/Contact";
-import PublicLayout from "./layouts/PublicLayout";
-import AdminLayout from "./layouts/AdminLayout";
+import Layout from "./layouts/Layout";
 import MyPaths from "./MyPaths";
 import Login from "./pages/Login";
 import Meeting from "./pages/Meeting";
@@ -18,97 +17,97 @@ const router = createBrowserRouter([
   {
     path: MyPaths.ACCUEIL,
     element: (
-      <PublicLayout>
+      <Layout>
         <Accueil />
-      </PublicLayout>
+      </Layout>
     ),
   },
   {
     path: MyPaths.ACTUS,
     element: (
-      <PublicLayout>
+      <Layout>
         <Actualites />
-      </PublicLayout>
+      </Layout>
     ),
   },
   {
     path: MyPaths.EVENEMENTS,
     element: (
-      <PublicLayout>
+      <Layout>
         <Evenements />
-      </PublicLayout>
+      </Layout>
     ),
   },
   {
     path: MyPaths.CONTACT,
     element: (
-      <PublicLayout>
+      <Layout>
         <Contact />
-      </PublicLayout>
+      </Layout>
     ),
   },
   {
     path: MyPaths.LOGIN,
     element: (
-      <PublicLayout>
+      <Layout>
         <Login />
-      </PublicLayout>
+      </Layout>
     ),
   },
   {
     path: MyPaths.MEETING,
     element: (
-      <PublicLayout>
+      <Layout>
         <Meeting />
-      </PublicLayout>
+      </Layout>
     ),
   },
   {
     path: MyPaths.TOURNAMENT,
     element: (
-      <PublicLayout>
+      <Layout>
         <Tournament />
-      </PublicLayout>
+      </Layout>
     ),
   },
   {
     path: MyPaths.ARTICLE,
     element: (
-      <PublicLayout>
+      <Layout>
         <Article />
-      </PublicLayout>
+      </Layout>
     ),
   },
   {
     path: MyPaths.ADMIN_USER,
     element: (
-      <AdminLayout>
+      <Layout>
         <AdminUser />
-      </AdminLayout>
+      </Layout>
     ),
   },
   {
     path: MyPaths.ADMIN_EVENT,
     element: (
-      <AdminLayout>
+      <Layout>
         <AdminEvent />
-      </AdminLayout>
+      </Layout>
     ),
   },
   {
     path: MyPaths.ADMIN_ARTICLE,
     element: (
-      <AdminLayout>
+      <Layout>
         <AdminArticle />
-      </AdminLayout>
+      </Layout>
     ),
   },
   {
     path: MyPaths.ACCOUNT,
     element: (
-      <AdminLayout>
+      <Layout>
         <Account />
-      </AdminLayout>
+      </Layout>
     ),
   },
 ]);
